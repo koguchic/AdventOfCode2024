@@ -25,5 +25,5 @@ distances = 0
 for a, b in zip(location_a, location_b):
     distances += max(a - b, b - a)
 
-print(distances)
+print(distances) # 2970687
 
