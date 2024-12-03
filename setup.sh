@@ -60,6 +60,11 @@ while [[ $# -gt 0 ]]; do
             EXTENSION="ts"
             shift # past argument
             ;;
+        --java)
+            LANGUAGE="java"
+            EXTENSION="java"
+            shift # past argument
+            ;;
         *)
             # Unknown option
             usage
