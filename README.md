@@ -34,3 +34,11 @@ If you want to try the challenge in multiple languages, you can do that too!
 ./setup.sh --name christian --python
 ./setup.sh --name christian --cpp
 ```
+
+## What's next?
+
+Find the problems on the official Advent of Code website where you'll need to sign up.  They'll provide you with the problem with *your* custom input and you can verify your custom answer when you submit.  Then, so we can all share code with each other, push your solution in the directory designated by the day (e.g. December 1 is the subdirectory 1).
+
+We'll do some things things asynchronously like setup and some coding for problems.  What we'll do synchronously is hold a weekly session where we can approach problems together, discuss them, and review the problems from the week on Discord.
+
+
