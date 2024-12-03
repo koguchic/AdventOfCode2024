@@ -84,7 +84,8 @@ cd "$NAME" || exit 1
 # Create subdirectories and solution files
 for dir in {1..25}; do
     mkdir -p "$dir"
-    touch "$dir/solution.$EXTENSION"
+    touch "$dir/solution_part1.$EXTENSION"
+    touch "$dir/solution_part2.$EXTENSION"
 done
 
 echo "Setup complete for '$NAME' using '$LANGUAGE'."
