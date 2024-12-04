@@ -1,7 +1,7 @@
 ### setup ###
 
 # read in input.txt
-with open('input.txt') as f:
+with open('input_one.txt') as f:
     lines = f.readlines()
 
 one = []
