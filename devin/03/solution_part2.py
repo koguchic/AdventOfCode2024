@@ -15,13 +15,13 @@ for line in raw:
     # Finds all instances of the regex pattern in the corrupted memory
     commands = re.findall(pattern, line)
     for command in commands:
-        # Disable mul if 'don't'
+        # Disable mul instructions if 'don't' command found
         if command.startswith('don\'t'):
             do = False
-        # Enable mul if 'do'
+        # Enable mul instructions if 'do' command found
         elif command.startswith('do'):
             do = True
-        # If do command enabled, add the product to the total
+        # Add the product to the total if mul is enabled
         else:
             if do:
                 command = command.split(',')

@@ -12,7 +12,7 @@ total = 0
 for line in raw:
     # Finds all instances of the multiplcation function in the corrupted memory
     commands = re.findall(pattern, line)
-    # Isolate and mutliply the numbers found in valid multiply functions
+    # Isolate the numbers found in the multiplcations functions and add the product to the total
     for operation in commands:
         operation = operation.split(',')
         operation = [int(operation[0][4::]), int(operation[1][:-1:])]
