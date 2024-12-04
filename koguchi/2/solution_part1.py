@@ -26,20 +26,7 @@ def is_within_safe_range(current: int, previous: int) -> bool:
 
 
 def changes_direction(current: int, previous: int, is_descending: bool) -> bool:
-    # Why was this so awkwardly hard for me lol
-    if current > previous:
-        if is_descending:
-            # print(f"swapped directions {previous} {current}")
-            return True
-        else:
-            return False
-
-    else: # current < previous
-        if is_descending:
-            return False
-        else:
-            # print(f"swapped directions {previous} {current}")
-            return True
+    return (current > previous) == is_descending
 
 
 def report_is_safe(report):

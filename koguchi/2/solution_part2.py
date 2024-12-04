@@ -24,17 +24,7 @@ def is_within_safe_range(current: int, previous: int) -> bool:
 
 
 def changes_direction(current: int, previous: int, is_descending: bool) -> bool:
-    if current > previous:
-        if is_descending:
-            return True
-        else:
-            return False
-
-    else: # current < previous
-        if is_descending:
-            return False
-        else:
-            return True
+    return (current > previous) == is_descending
 
 
 def report_is_safe(report: List[int], safety: bool=True) -> bool:
