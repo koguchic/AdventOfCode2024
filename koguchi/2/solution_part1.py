@@ -27,7 +27,7 @@ def changes_direction(current: int, previous: int, is_descending: bool) -> bool:
     return (current > previous) == is_descending
 
 
-def report_is_safe(report):
+def report_is_safe(report: List[int]) -> bool:
     is_descending = None
     for i in range(1, len(report)):
         previous = report[i-1]
