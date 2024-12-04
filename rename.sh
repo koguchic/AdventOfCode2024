@@ -1,22 +1,20 @@
 #!/bin/bash
 
-# Rename directories from 1-9 to 01-09 for all subdirectories
+# Fix intermediate directories and move contents up one level
 for parent_dir in */; do
-    for sub_dir in "$parent_dir"[1-9]/; do
-        # Remove trailing slash for renaming
-        old_name="${sub_dir%/}"
-        # Extract the parent directory and the current subdirectory name
-        base_name=$(basename "$old_name")
-        parent_path=$(dirname "$old_name")
+    for intermediate_dir in "$parent_dir"[0-9][0-9]/[1-9]/; do
+        # Remove trailing slash for processing
+        intermediate_path="${intermediate_dir%/}"
+        parent_path=$(dirname "$intermediate_path")
         
-        # Rename to add leading zero
-        if [[ "$base_name" =~ ^[1-9]$ ]]; then
-            new_name=$(printf "%02d" "$base_name")
-            mv "$old_name" "$parent_path/$new_name"
-            echo "Renamed $old_name to $parent_path/$new_name"
-        fi
+        # Move contents of intermediate_dir to its parent
+        mv "$intermediate_path"/* "$parent_path/"
+        
+        # Remove the now-empty intermediate directory
+        rmdir "$intermediate_path"
+        echo "Fixed intermediate directory: $intermediate_path"
     done
 done
 
-echo "Renaming completed!"
+echo "Intermediate directories fixed!"
 
