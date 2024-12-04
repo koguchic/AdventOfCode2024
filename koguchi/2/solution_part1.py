@@ -20,8 +20,6 @@ with open('input.txt', 'r') as f:
 
 def is_within_safe_range(current: int, previous: int) -> bool:
     within_safe_range = 1 <= abs(current - previous) <= 3
-    # if not within_safe_range:
-    #     print(f'difference: {abs(current - previous)}')
     return within_safe_range
 
 
@@ -37,15 +35,12 @@ def report_is_safe(report):
         # print(previous, current)
 
         if not is_within_safe_range(current, previous):
-            # print('Breaking unsafe range')
             break
 
         if is_descending is None:
             is_descending = current < previous
-            # print(f'This run is descending: {is_descending}')
 
         if changes_direction(current, previous, is_descending):
-            # print('Breaking change direction')
             break
     else:
         return True
