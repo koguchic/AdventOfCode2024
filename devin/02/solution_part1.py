@@ -29,5 +29,3 @@ for report in reports:
             prev = level
 
 print(safe)
-
-    

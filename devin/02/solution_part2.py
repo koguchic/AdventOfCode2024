@@ -46,7 +46,3 @@ for report in reports:
             safe += 1
 
 print(safe)
-
-
-
-    
