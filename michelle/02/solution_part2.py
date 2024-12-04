@@ -1,3 +1,7 @@
+'''
+The worst-case runtime complexity is approximately O(n * m^2 log m), where n is the number of lines and m is the length of each report.
+If I were to remove the log(m) part it would be O(n*m^2)
+'''
 from collections import Counter
 
 # read in input.txt
