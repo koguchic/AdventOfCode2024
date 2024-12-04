@@ -20,16 +20,12 @@ with open('input.txt', 'r') as f:
 
 def is_within_safe_range(current: int, previous: int) -> bool:
     within_safe_range = 1 <= abs(current - previous) <= 3
-    # if not within_safe_range:
-    #     print(f'difference: {abs(current - previous)}')
     return within_safe_range
 
 
 def changes_direction(current: int, previous: int, is_descending: bool) -> bool:
-    # Why was this so awkwardly hard for me lol
     if current > previous:
         if is_descending:
-            # print(f"swapped directions {previous} {current}")
             return True
         else:
             return False
@@ -38,12 +34,10 @@ def changes_direction(current: int, previous: int, is_descending: bool) -> bool:
         if is_descending:
             return False
         else:
-            # print(f"swapped directions {previous} {current}")
             return True
 
 
 def report_is_safe(report: List[int], safety: bool=True) -> bool:
-    print(report)
     is_descending = None
     for i in range(1, len(report)):
         previous = report[i-1]
@@ -51,9 +45,7 @@ def report_is_safe(report: List[int], safety: bool=True) -> bool:
         # print(previous, current)
 
         if not is_within_safe_range(current, previous):
-            print(f'Breaking unsafe range {previous} {current}')
             if safety:
-                print('Safety blown')
                 safety = False
                 tmp1 = report.copy()
                 tmp2 = report.copy()
@@ -65,15 +57,9 @@ def report_is_safe(report: List[int], safety: bool=True) -> bool:
 
         if is_descending is None:
             is_descending = current < previous
-            if is_descending:
-                print(f'This run is descending')
-            else:
-                print(f'This run is ascending')
 
         if changes_direction(current, previous, is_descending):
-            print('Breaking change direction')
             if safety:
-                print('Safety blown')
                 safety = False
                 tmp1 = report.copy()
                 tmp2 = report.copy()
@@ -106,10 +92,7 @@ def report_is_safe(report: List[int], safety: bool=True) -> bool:
 num_safe = 0
 for report in reports:
     if report_is_safe(report):
-        print('REPORT SAFE\n\n')
         num_safe += 1
-    else:
-        print('REPORT NOT SAFE\n\n')
 
 print(num_safe) # 404
 
