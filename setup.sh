@@ -82,7 +82,7 @@ mkdir -p "$NAME"
 cd "$NAME" || exit 1
 
 # Create subdirectories and solution files
-for dir in {1..25}; do
+for dir in $(seq -w 1 25); do
     mkdir -p "$dir"
     touch "$dir/solution_part1.$EXTENSION"
     touch "$dir/solution_part2.$EXTENSION"
