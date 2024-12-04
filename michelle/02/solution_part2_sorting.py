@@ -1,6 +1,7 @@
 '''
-The worst-case runtime complexity is approximately O(n * m^2 log m), where n is the number of lines and m is the length of each report.
-If I were to remove the log(m) part it would be O(n*m^2)
+The worst-case runtime complexity is approximately O(n * m^3 log m), where n is the number of lines and m is the length of each report.
+If I were to remove the log(m) part it would be O(n*m^3)
+My answer is 569
 '''
 from collections import Counter
 
@@ -33,8 +34,8 @@ def is_report_valid(report, secondpass = False):
         return 0 if secondpass else is_salvagable(report)
 
     # must be increasing or decreasing
-    # this is o(nlogn) - an optimization could occur here
-    # but the code is beautiful ngl
+    # this is o(nlogn) - an optimization could occur here. I optimized my code in solution_part2_no_sorting
+    # but this code is beautiful ngl
     increasing = sorted(report)
     decreasing = sorted(report, reverse=True)
     if report != increasing and report != decreasing:
@@ -45,7 +46,7 @@ def is_report_valid(report, secondpass = False):
         distance = abs(report[i] - report[i+1])
         if distance == 0 or distance > 3:
             return 0 if secondpass else is_salvagable(report)
-        
+    print(report)
     return 1
 
 total_safe = 0
