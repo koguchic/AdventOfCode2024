@@ -120,3 +120,4 @@ for i in range(len(word_search)):
             count += local_count
 
 print(count) # 2662
+
