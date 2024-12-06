@@ -72,3 +72,4 @@ for update in correctly_ordered_updates:
     total += middle_page
 
 print(total)
+
