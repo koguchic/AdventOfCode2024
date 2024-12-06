@@ -17,7 +17,7 @@ for match in matches:
         do = False
     elif "do" in match:
         do = True
-    else: 
+    else:
         m = re.match(pattern_extract, match)
         if m:
             a = int(m.group(1))

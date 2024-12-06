@@ -1,11 +1,10 @@
-from pprint import pprint
 
 
 # with open('test.txt', 'r') as f:
 with open('input.txt', 'r') as f:
     word_search = f.readlines()
 
-pprint(word_search)
+# print(word_search)
 
 def search_left(i, j):
     if j < 3:
@@ -96,40 +95,18 @@ def search_SE(i, j):
 
 
 def search(i, j):
-    local_count = 0
+    search_functions = [
+        search_left,
+        search_right,
+        search_up,
+        search_down,
+        search_NE,
+        search_NW,
+        search_SE,
+        search_SW,
+    ]
 
-    found = search_left(i, j)
-    if found:
-        local_count += 1
-
-    found = search_right(i, j)
-    if found:
-        local_count += 1
-
-    found = search_up(i, j)
-    if found:
-        local_count += 1
-
-    found = search_down(i, j)
-    if found:
-        local_count += 1
-
-    found = search_NE(i, j)
-    if found:
-        local_count += 1
-
-    found = search_NW(i, j)
-    if found:
-        local_count += 1
-
-    found = search_SE(i, j)
-    if found:
-        local_count += 1
-
-    found = search_SW(i, j)
-    if found:
-        local_count += 1
-
+    local_count = sum(search(i, j) for search in search_functions)
     return local_count
 
 
@@ -142,4 +119,5 @@ for i in range(len(word_search)):
             local_count = search(i, j)
             count += local_count
 
-print(count)
+print(count) # 2662
+
