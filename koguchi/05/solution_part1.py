@@ -71,5 +71,5 @@ for update in correctly_ordered_updates:
     middle_page = update[len(update)//2]
     total += middle_page
 
-print(total)
+print(total) # 3608
 
