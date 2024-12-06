@@ -17,7 +17,7 @@ public class solution_part1 {
                 Matcher m = p.matcher(rawLine);
 
                 while (m.find()) {
-                    String mulOp = rawLine.substring(m.start(), m.end());
+                    String mulOp = m.group();
 
                     String[] tmp = mulOp.split(",");
                     int x = Integer.parseInt(tmp[0].substring(4));
