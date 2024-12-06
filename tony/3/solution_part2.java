@@ -13,13 +13,13 @@ public class solution_part2 {
             int lastEnable = 0;
             int lastDisable = 0;
 
+            Pattern pEnable = Pattern.compile("(do\\(\\))");
+                Pattern pDisable = Pattern.compile("(don't\\(\\))");
+                Pattern pMulOp = Pattern.compile("(mul\\([0-9]{0,3},[0-9]{0,3}\\))");
+
             while (scanner.hasNextLine()) {
                 String rawLine = scanner.nextLine();
                 boolean newLine = true;
-
-                Pattern pEnable = Pattern.compile("(do\\(\\))");
-                Pattern pDisable = Pattern.compile("(don't\\(\\))");
-                Pattern pMulOp = Pattern.compile("(mul\\([0-9]{0,3},[0-9]{0,3}\\))");
                 
                 Matcher mMulOp = pMulOp.matcher(rawLine);
                 Queue<Integer> enabledIndexes = new LinkedList<Integer>();
@@ -38,14 +38,14 @@ public class solution_part2 {
                     System.out.println("mulOpStartIndex: " + mulOpStartIndex);
                     String mulOp = mMulOp.group();
                     System.out.println("mulOp: " + mulOp);
-                    while (enabledIndexes.size() > 0 && enabledIndexes.peek() < mulOpStartIndex) {
+                    while (enabledIndexes.size() > 0 && enabledIndexes.peek() <= mulOpStartIndex) {
                         lastEnable = enabledIndexes.poll();
                         if (newLine) {
                             lastDisable = 0;
                             newLine = false;
                         }
                     }
-                    while (disabledIndexes.size() > 0 && disabledIndexes.peek() < mulOpStartIndex) {
+                    while (disabledIndexes.size() > 0 && disabledIndexes.peek() <= mulOpStartIndex) {
                         lastDisable = disabledIndexes.poll();
                         if (newLine) {
                             lastEnable = 0;
