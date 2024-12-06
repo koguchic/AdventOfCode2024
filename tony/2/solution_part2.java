@@ -36,7 +36,7 @@ public class solution_part2 {
                 if (!dampenerUsed) {
                     return (helper(arrConcat(Arrays.copyOfRange(arr, 0, i), Arrays.copyOfRange(arr, i + 1, arr.length)), true)) |
                     (helper(arrConcat(Arrays.copyOfRange(arr, 0, i + 1), Arrays.copyOfRange(arr, i + 2 >= arr.length ? arr.length : i + 2, arr.length)), true)) |
-                    // Edge case: everything besides the first element is correct, but so is arr[0] -> arr[1]
+                    // Edge case: everything besides the first element is correct, but so is arr[0] -> arr[1] (stupid)
                     (helper(Arrays.copyOfRange(arr, 1, arr.length), true));
                 }
                 return 0;
@@ -47,7 +47,7 @@ public class solution_part2 {
                 if (!dampenerUsed) {
                     return (helper(arrConcat(Arrays.copyOfRange(arr, 0, i), Arrays.copyOfRange(arr, i + 1, arr.length)), true)) |
                     (helper(arrConcat(Arrays.copyOfRange(arr, 0, i + 1), Arrays.copyOfRange(arr, i + 2 >= arr.length ? arr.length : i + 2, arr.length)), true)) |
-                    // Edge case: everything besides the first element is correct, but so is arr[0] -> arr[1]
+                    // Edge case: everything besides the first element is correct, but so is arr[0] -> arr[1] (stupid)
                     (helper(Arrays.copyOfRange(arr, 1, arr.length), true));
                 }
                 return 0;
