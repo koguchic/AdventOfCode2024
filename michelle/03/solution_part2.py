@@ -14,7 +14,13 @@ with open('input_three.txt') as f:
 merged_input = "".join(lines)
 
 ### code
-def calculate(input):
+
+def calculate(str: input) -> int:
+    '''
+    Given a substring, find all instances of mul(#,#) and return #*# + #*# 
+    input: str - "mul(549,158):>!?$,what(),who()mul(429,727)}"
+    returns: int - sum of multiplied numbers
+    '''
     regex = r"mul\((\d+),(\d+)\)"
     matches = re.findall(regex, input) #("num" , "num")
     total = 0
