@@ -98,36 +98,28 @@ def search_SE(i, j):
 def search(i, j):
     local_count = 0
 
-    found = search_left(i, j)
-    if found:
+    if search_left(i, j):
         local_count += 1
 
-    found = search_right(i, j)
-    if found:
+    if search_right(i, j):
         local_count += 1
 
-    found = search_up(i, j)
-    if found:
+    if search_up(i, j):
         local_count += 1
 
-    found = search_down(i, j)
-    if found:
+    if search_down(i, j):
         local_count += 1
 
-    found = search_NE(i, j)
-    if found:
+    if search_NE(i, j):
         local_count += 1
 
-    found = search_NW(i, j)
-    if found:
+    if search_NW(i, j):
         local_count += 1
 
-    found = search_SE(i, j)
-    if found:
+    if search_SE(i, j):
         local_count += 1
 
-    found = search_SW(i, j)
-    if found:
+    if search_SW(i, j):
         local_count += 1
 
     return local_count
@@ -142,4 +134,4 @@ for i in range(len(word_search)):
             local_count = search(i, j)
             count += local_count
 
-print(count)
+print(count) # 2662
