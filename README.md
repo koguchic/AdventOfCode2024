@@ -4,13 +4,15 @@
 
 Advent of Code is an annual programming challenge with daily puzzles released during December, designed to test problem-solving and coding skills in a fun, festive way.
 
+The questions are here: https://adventofcode.com
+
+You'll be given your unique puzzle input (a text file) and asked to input your answer in the website.
+
 ## What's this Repo for?
 
 There are no rules in this repo.  
 
 This repo is for educational purposes for people who want to follow the Advent of Code this year.  It's typical for people to do these daily programming challenges to learn a new programming language or brush up on some programming.  It'll typically enable people to get familiar with the standard library and be able to solve leetcode-style problems.  There is no need to do all of them or even do them in numerical order.  There's no obligation for anyone to keep doing these with us and you can feel free to drop off or join whenever you want.  There's no pressure.
-
-The website for the questions and to submit your answers is here: https://adventofcode.com
 
 ## I wanna join!
 
@@ -28,11 +30,11 @@ You can select from a variety of languages you wanna practice like C++, Python, 
 ./setup.sh --name koguchi --cpp
 ```
 
-If you want to try the challenge in multiple languages, you can do that too!
+[OPTIONAL] If you want to try the challenge in multiple languages, you can do that too!
 
 ```
-./setup.sh --name christian --python
-./setup.sh --name christian --cpp
+./setup.sh --name koguchi --python
+./setup.sh --name koguchi --cpp
 ```
 
 ## What's next?
