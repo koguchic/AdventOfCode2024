@@ -30,11 +30,11 @@ You can select from a variety of languages you wanna practice like C++, Python, 
 ./setup.sh --name koguchi --cpp
 ```
 
-If you want to try the challenge in multiple languages, you can do that too!
+[OPTIONAL] If you want to try the challenge in multiple languages, you can do that too!
 
 ```
-./setup.sh --name christian --python
-./setup.sh --name christian --cpp
+./setup.sh --name koguchi --python
+./setup.sh --name koguchi --cpp
 ```
 
 ## What's next?
