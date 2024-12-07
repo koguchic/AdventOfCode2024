@@ -56,7 +56,6 @@ public class solution_part2 {
         return 0;
     }
     private static int isSafeWithDampen(int[] arr) {
-
         /*
          * Invalid diff values when more than one of the following happens
          * - Direction changes more than once
@@ -77,7 +76,7 @@ public class solution_part2 {
                     invalidDiffCount += (isIncrementing1 == diff > 0) ? 0 : 1;
                 }
                 isIncrementing1 = diff > 0 ? true : false;
-            }            
+            }
         }
         if(invalidDiffCount > 1) return 0; // too many invalids
         for (int i = 0; i < diffs.length - 1; i++) {
