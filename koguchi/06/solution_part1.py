@@ -26,11 +26,10 @@ print(f'\nStarting at {curr_i}, {curr_j}')
 
 # Keep track of where the guard visits by keeping a copy of the terrain
 visited = grid.copy()
-visited[curr_i][curr_j] = 'X'
+visited[curr_i][curr_j] = VISITED
 
 v = set()
 v.add((curr_i, curr_j))
-visited[curr_i][curr_j] = 'X'
 
 # Simulate movement
 directions = [(-1, 0), (0, 1), (1, 0), (0, -1)]
