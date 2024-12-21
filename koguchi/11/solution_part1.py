@@ -40,4 +40,4 @@ for iter in range(num_iters):
     stones = new_stones[:]
 
 print(f'{"*"*80}\n{iter+1} {stones}\n{"*"*80}')
-print(f'Answer: {len(stones)}') # Too low: 55312
+print(f'Answer: {len(stones)}') # 218079
