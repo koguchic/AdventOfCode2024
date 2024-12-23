@@ -33,7 +33,7 @@ def verify_safe(report) -> bool:
 # Brute-force approach to save brain power
 safe = 0
 for report in reports:
-    if verifySafe(report):
+    if verify_safe(report):
         safe += 1
     else:
         dampened = False
