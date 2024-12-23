@@ -37,7 +37,6 @@ while row < len(crossword):
 
 # Checking each column
 crossword = np.transpose(crossword)
-print(crossword)
 for column in crossword:
     column = ''.join(column)
     total += column.count('XMAS')
