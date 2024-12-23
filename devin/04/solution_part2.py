@@ -19,11 +19,11 @@ while row < len(crossword):
     combined = forward + backward
     # A valid X-MAS must have a center value of 'A'
     if middle == 'A':
-        # Its surround letters must consist of 'M' or 'S'
+        # Its surrounding letters must consist of 'M' or 'S'
         if set(combined) == valid:
-            # The total number of 'M' and 'S' must total 2 each
+            # The total number of 'M' and 'S' characters must total 2 each
             if combined.count('M') == 2 and combined.count('S') == 2:
-                # The diagonal must not be the same character, otherwise we end up with 'MAM' or 'SAS'
+                # The characters on a forward/backward diagonal must not be the same, otherwise we end up with 'MAM' or 'SAS'
                 if (forward != 'MM' and forward != 'SS') and (backward != 'MM' and backward != 'SS'):
                     total += 1
         
