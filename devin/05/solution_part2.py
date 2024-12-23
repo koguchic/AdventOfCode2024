@@ -29,12 +29,6 @@ def is_valid(update) -> bool:
     valid = True
     while queue:
         curr = queue.popleft()
-        # Look forward to see if all upcoming pages come after the current page
-        for val in queue:
-            if curr in rules:
-                if val not in rules[curr]:
-                    valid = False
-
         # Look backward to see if all pages that have already been seen should not come after the current page
         for val in seen:
             if curr in rules:
