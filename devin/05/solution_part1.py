@@ -22,6 +22,7 @@ for line in raw:
             else:
                 rules[line[0]].append(line[1])
 
+# Check to see if an update is valid or not
 solution = 0
 for update in updates:
     queue = deque(update)
@@ -29,13 +30,13 @@ for update in updates:
     valid = True
     while queue:
         curr = queue.popleft()
-        # Forward check to see if all upcoming pages come after the current page
+        # Look forward to see if all upcoming pages come after the current page
         for val in queue:
             if curr in rules:
                 if val not in rules[curr]:
                     valid = False
 
-        # Backward check to see if all pages that have already been seen should not come after the current page
+        # Look backward to see if all pages that have already been seen should not come after the current page
         for val in seen:
             if curr in rules:
                 if val in rules[curr]:
