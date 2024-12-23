@@ -11,7 +11,7 @@ for line in raw:
     reports.append(line)
 
 # Verifies whther the report is safe or not
-def verifySafe(report) -> bool:
+def verify_safe(report) -> bool:
     safe = False
     # Check if the levels in a report are strictly increasing or decreasing
     inOrder = sorted(report)
@@ -39,7 +39,7 @@ for report in reports:
         dampened = False
         for index in range(len(report)):
             temp = report[:index:] + report[index + 1::]
-            if verifySafe(temp):
+            if verify_safe(temp):
                 dampened = True
 
         if dampened:
