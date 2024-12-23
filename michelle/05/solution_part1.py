@@ -1,6 +1,6 @@
 '''
-Runtime: O(M) where M is the number of elements in the grid 
-Correct Answer: 2534
+Runtime: O(N) where N is the number of total pages
+Correct Answer: 4924
 '''
 
 from collections import defaultdict
